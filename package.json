@@ -1,0 +1,25 @@
+{
+  "name": "project-01",
+  "version": "1.0.0",
+  "description": "simple proxy server",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "request": "^2.75.0",
+    "yargs": "^6.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "echo": "node echo_server.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "cqshinn",
+  "license": "MIT"
+}
