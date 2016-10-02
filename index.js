@@ -31,7 +31,7 @@ let argv = require('yargs')
     .nargs('r', 1)
     .help('h')
     .example('node index.js -p 8001 -h google.com')
-    .epilog('copyright 2015')
+    .epilog('copyright 2016')
     .argv;
 
 let protocal = argv.xs ? https : http;
@@ -55,7 +55,7 @@ let ssl_options = {
 function process_server(req, res){
   console.log(`Proxying request to: ${destinationUrl + req.url}`);
   let options = {
-    headers: req.headers,
+    headers: req.headers['x-destination-url'],
     url: `${destinationUrl}${req.url}`
   };
   let outboundResponse = request(options);
@@ -79,5 +79,5 @@ protocal.createServer((req, res) => {
 }).listen(8001);
 
 
-7
+
 
