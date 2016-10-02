@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const argv = require('yargs').argv;
-const logPath = argv.log && path.join(__dirname, argv.log);
+const logPath = argv.logFile && path.join(__dirname, argv.logFile);
 
 let logStream = logPath ? fs.createWriteStream(logPath) : process.stdout;
 http.createServer((req, res) => {
