@@ -17,6 +17,11 @@ Completed:
 * [] Optional: Supports HTTPS
 * [] Optional: `-h` argument prints CLI API
 
+
+![Javascript](javascript.png)
+
+![Learnyounode](learnyounode.png)
+
 Walkthrough Gif:
 [Add walkthrough.gif to the project root]
 
