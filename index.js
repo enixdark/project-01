@@ -4,6 +4,7 @@ const request = require('request');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
+const spawn = require('child_process').spawn;
 
 let argv = require('yargs')
     .default('host', '127.0.0.1:8000')
