@@ -40,6 +40,7 @@ let logStream = logPath ? fs.createWriteStream(logPath) : process.stdout;
 
 let port = argv.port || (argv.host === '127.0.0.1' ? 8000 : 80);
 
+
 let destinationUrl = argv.url || url.format({
    protocol: 'http' ,
    host: argv.host,
@@ -51,6 +52,11 @@ let ssl_options = {
   cert: fs.readFileSync('./ssl/cert.pem')
 };
 
+if(argv.exec){
+  console.log(argv.exec);
+  let child = spawn(argv.exec[0], argv.exec.slice(1), { stdio: 'inherit' });
+  process.exit();
+}
 
 function process_server(req, res){
   console.log(`Proxying request to: ${destinationUrl + req.url}`);
